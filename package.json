@@ -1,0 +1,82 @@
+{
+  "name": "LC2ExcelTransform",
+  "version": "1.0.0",
+  "description": "LetzteChance.org - LC2ExcelTransform - Hybrid Application for Windows,Android and IOS",
+  "devDependencies": {
+    "electron": "^1.8.8",
+    "electron-builder": "^19.48.3",
+    "electron-packager": "^10.1.0"
+  },
+  "author": "David Honisch",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build",
+    "package-mac": "electron-packager . LC2ExcelTransform --overwrite --platform=darwin --arch=x64 --icon=./favicon.ico.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . LC2ExcelTransform --overwrite --asar=true --platform=win32 --arch=ia32 --icon=./favicon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"LC2ExcelTransform\"",
+    "package-linux": "electron-packager . LC2ExcelTransform --overwrite --asar=true --platform=linux --arch=x64 --icon=./32x32.png --prune=true --out=release-builds",
+    "xlsx2json": "node nodejs/xls2json.js",
+    "transformtest": "node nodejs/nodejre.js",
+    "transform": "node nodejs/nodejre.js",
+    "query": "node getmaterialimport.js",
+    "server": "node nodejs/server.js",
+    "getmaterial": "node nodejs/getmaterialimport.js",
+    "count": "node nodejs/sumimport.js",
+    "connect": "node nodejs/connect.js",
+    "startclient": "start http://localhost:5000",
+    "test": "test"
+  },
+  "repository": "",
+  "keywords": [
+    "Electron",
+    "lc2searchnav",
+    "X-Plattform",
+    "Search",
+    "demo"
+  ],
+  "license": "MIT",
+  "build": {
+    "appId": "org.letztechance.LC2ExcelTransform",
+    "copyright": "Copyright © 2018 ${David Honisch}",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "title": "lc2searchnav",
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cordova-plugin-http": "^1.2.0",
+    "html-extractor": "^0.2.2",
+    "htmlparser2": "^3.9.2",
+    "imdb-api": "^3.1.2",
+    "query": "^0.2.0",
+    "shelljs": "^0.8.2",
+    "xlsx": "^0.14.0",
+    "xlsx-to-json": "^0.3.0",
+    "xlsx-to-json-lc": "^0.5.0",
+    "xml-js": "^1.6.8",
+    "xmljson": "^0.2.0"
+  }
+}

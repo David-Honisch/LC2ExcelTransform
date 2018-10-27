@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>LetzteChance.Org LC2ExcelTransform</title>
+<style>
+#drop{
+	border:2px dashed #bbb;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:25px;
+	text-align:center;
+	font:20pt bold,"Arial";color:#bbb
+}
+a { text-decoration: none }
+</style>
+</head>
+<body>
+		<h1><b><a href="http://www.letztechance.org">LC2ExcelTransform</a></b></h1>
+<pre>
+<br />
+<button id="readf">Click here to select a file from your computer</button><br />
+<div id="drop">Drop a spreadsheet file here to see sheet data</div>
+<input type="file" name="xlfile" id="xlf" />
+</pre>
+<div>
+		<a href="#htmlout" onclick="new HttpRequest().execCMD('create.bat','htmlout');" class="button">CREATE</a>
+		<a href="#htmlout" onclick="new HttpRequest().execCMD('check.bat','htmlout');" class="x">CHECK</a>
+		<a href="#htmlout" onclick="new HttpRequest().execCMD('import.bat','htmlout');" class="x">IMPORT</a>
+		<a href="#htmlout" onclick="new HttpRequest().execCMD('XLS2JSON.bat','htmlout');" class="x x">XLS2JSON</a>
+		<a href="#htmlout" onclick="new HttpRequest().execCMD('XLS2XML.bat','htmlout');" class="x x">XLS2XML</a>
+</div>
+<p>Supports xls|xlsx|xlsm|xlsb|xml|csv|txt|dif|sylk|slk|prn|ods|fods|htm|html</p>
+<p>
+<input type="submit" value="Export" id="xlsxport" onclick="export_xlsx();" disabled="true">
+<input type="submit" value="Export as JSON" id="jsonxport" onclick="export_json();" disabled="true">
+<input type="submit" value="Export as XML" id="xmlxport" onclick="export_xml();" disabled="true">
+</p>
+<div id="htmlout"></div>
+<div id="errorhtmlout"></div>
+<br />
+<a href="https://github.com/SheetJS/js-xlsx" target="_blank">Based on SheetJS</a>
+<script src="index.js"></script>
+<script src="api.js"></script>
+</body>
+</html>
