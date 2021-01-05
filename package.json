@@ -66,7 +66,7 @@
     }
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cordova-plugin-http": "^1.2.0",
     "html-extractor": "^0.2.2",
     "htmlparser2": "^3.9.2",
