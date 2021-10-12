@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "LetzteChance.org - LC2ExcelTransform - Hybrid Application for Windows,Android and IOS",
   "devDependencies": {
-    "electron": "^1.8.8",
+    "electron": "^11.5.0",
     "electron-builder": "^19.48.3",
     "electron-packager": "^15.0.0"
   },
